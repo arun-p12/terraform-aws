@@ -1,0 +1,21 @@
+-
+  name: "HTTPD provisioning via Ansible"
+  hosts: all
+  sudo: yes
+  tasks:
+    # installing HTTPD
+    - name: "Installing HTTPD"
+      yum: "name=httpd state=installed"
+
+    - name: "Start the webserver"
+      service: "name=httpd state=started"
+
+    # installing NGINX
+    # - name: "Installing the EPEL repository"
+    # yum: "name=epel-release state=installed"
+
+    # - name: "Configuring the NGINX"
+    # yum: "name=nginx state=installed"
+
+    # - name: "Start the webserver"
+    # service: "name=nginx state=started"
